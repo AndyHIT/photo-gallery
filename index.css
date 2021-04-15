@@ -1,0 +1,33 @@
+.gallery-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.gallery-container .gallery-slide {
+  display: none;  
+}
+.arrow-direct {
+  position: absolute;
+  top: 30%;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+}
+.arrow-direct:hover {
+  cursor: pointer;
+  background-color:#000;
+}
+.next {
+  right: 0;
+}
+.slide-preview {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+.slide-preview .preview-column img {
+  width: 100%;
+}

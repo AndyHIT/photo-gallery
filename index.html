@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="./index.css" type="text/css" />
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="snow" />
+    </div>
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="mountains" />
+    </div>
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_lights_wide.jpg" alt="lights" />
+    </div>
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_5terre_wide.jpg" alt="5terre" />
+    </div>
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="natures" />
+    </div>
+    <div class="gallery-slide">
+      <img src="https://www.w3schools.com/howto/img_woods_wide.jpg" alt="woods" />
+    </div>
+    <a class="arrow-direct pre" onclick="showSlide(-1)">
+      ❮
+    </a>
+    <a class='arrow-direct next' onclick="showSlide(1)">
+      ❯
+    </a>
+    <div class='slide-preview'>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_snow.jpg" alt='snow' />
+      </div>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_mountains.jpg" alt='mountains' />
+      </div>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_lights.jpg" alt='lights' />
+      </div>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_5terre.jpg" alt='5terre' />
+      </div>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_nature.jpg" alt='nature' />
+      </div>
+      <div class='preview-column'>
+        <img src="https://www.w3schools.com/howto/img_woods.jpg" alt='woods' />
+      </div>
+    </div>
+  </div>
+<script>
+  let currentIndex = 0;
+  const slides = document.getElementsByClassName('gallery-slide');
+  const showSlide = (index) => {
+    currentIndex += index;
+    for(let i=0; i<slides.length; i+=1) {
+      if (currentIndex < 0) currentIndex = currentIndex + slides.length
+      if (currentIndex >= 6) currentIndex = currentIndex - slides.length
+      if (i === currentIndex) {
+        document.getElementsByClassName('gallery-slide')[currentIndex].style.display = 'block';
+        document.getElementsByClassName('preview-column')[currentIndex].style.opacity = 1;
+      } else {
+        document.getElementsByClassName('gallery-slide')[i].style.display = 'none';
+        document.getElementsByClassName('preview-column')[i].style.opacity = '0.6';
+      }
+    }
+  }
+  showSlide(currentIndex);
+
+</script>
+</body>
+</html>
